@@ -1,6 +1,7 @@
 import React from 'react'
+//import colorNames from 'colornames';//after installation this will work
 
-const Input = ({ colorValue, setColorValue }) => {
+const Input = ({ colorValue, setColorValue, setHexValue, isDarkText, setIsDarkText }) => {
   return (
     <form onSubmit={(e) => e.preventDefault()}>
         <label>Add Color Name:</label>
@@ -10,8 +11,18 @@ const Input = ({ colorValue, setColorValue }) => {
             placeholder='Add Color Name'
             required
             value={colorValue}
-            onChange={(e) => setColorValue(e.target.value)}
+            onChange={(e) => {
+                setColorValue(e.target.value);
+                //import colornames through npm and do this
+                //setHexValue(colorNames(e.target.value));
+            }}
         />
+        <button
+            type='button'
+            onClick={() => setIsDarkText(!isDarkText)}
+        >
+            toggle text color
+        </button>
     </form>
   )
 }
