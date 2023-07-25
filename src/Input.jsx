@@ -22,7 +22,7 @@ const Input = ({ colorValue, setColorValue,
             type='button'
             onClick={() => setIsDarkText(!isDarkText)}
         >
-            toggle text color
+            Toggle Text Color
         </button>
     </form>
   )
